@@ -85,7 +85,7 @@ def getUserJson(userInfo,token):
         "customerid": userInfo['customerId'],
         "deptid": userInfo['classId'],
         "source": "app",
-        "templateid": "clockSign2",
+        "templateid": "clockSign3",
         "stuNo": userInfo['stuNo'],
         "username": userInfo['username'],
         "userid": round(time.time()),
@@ -99,7 +99,7 @@ def getUserJson(userInfo,token):
                 "value": "无症状"
             }
         ],
-        "customerAppTypeRuleId": 138,
+        "customerAppTypeRuleId": 139,
         "clockState": 0,
         "token": token
         },
