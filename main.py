@@ -99,7 +99,7 @@ def getUserJson(userInfo,token):
                 "value": "无症状"
             }
         ],
-        "customerAppTypeRuleId": 147,
+        "customerAppTypeRuleId": 138,
         "clockState": 0,
         "token": token
         },
