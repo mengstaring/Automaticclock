@@ -1,6 +1,21 @@
 import time,json,requests,random,datetime
 from campus import CampusCard
 
+# 时间判断
+now = time.localtime().tm_hour +8
+if (now >= 0) & (now < 3):
+    templateid = "clockSign1"
+    customerAppTypeRuleId = 137
+elif (now >= 3) & (now < 9):
+    templateid = "clockSign2"
+    customerAppTypeRuleId = 138
+elif (now >= 9) & (now< 16):
+    templateid = "clockSign3"
+    customerAppTypeRuleId = 139
+elif (now >= 16) & (now < 24):
+    templateid = "clockSign1"
+    customerAppTypeRuleId = 137
+    
 def main():
     #定义变量
     success,failure=[],[]
@@ -85,7 +100,7 @@ def getUserJson(userInfo,token):
         "customerid": userInfo['customerId'],
         "deptid": userInfo['classId'],
         "source": "app",
-        "templateid": "clockSign3",
+        "templateid": templateid,
         "stuNo": userInfo['stuNo'],
         "username": userInfo['username'],
         "userid": round(time.time()),
@@ -99,7 +114,7 @@ def getUserJson(userInfo,token):
                 "value": "无症状"
             }
         ],
-        "customerAppTypeRuleId": 139,
+        "customerAppTypeRuleId": customerAppTypeRuleId,
         "clockState": 0,
         "token": token
         },
