@@ -8,3 +8,6 @@
 ● 校内打卡:6：20、11：20、 17：20
 
 ● 基于Github Actions，完全解放你的设备和服务器✔
+
+
+http://sc.ftqq.com/?c=code
