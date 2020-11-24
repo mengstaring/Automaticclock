@@ -1,1 +1,1 @@
-# EZY
+# Automatic clock
