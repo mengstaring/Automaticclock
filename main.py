@@ -1,21 +1,6 @@
 import time,json,requests,random,datetime
 from campus import CampusCard
 
-# 时间判断
-now = time.localtime().tm_hour +8
-if (now >= 0) & (now < 3):
-    templateid = "clockSign1"
-    customerAppTypeRuleId = 137
-elif (now >= 3) & (now < 9):
-    templateid = "clockSign2"
-    customerAppTypeRuleId = 138
-elif (now >= 9) & (now< 16):
-    templateid = "clockSign3"
-    customerAppTypeRuleId = 139
-elif (now >= 16) & (now < 24):
-    templateid = "clockSign1"
-    customerAppTypeRuleId = 137
-    
 def main():
     #定义变量
     success,failure=[],[]
@@ -86,6 +71,20 @@ def getUserJson(userInfo,token):
     #随机温度(36.2~36.8)
     a=random.uniform(36.2,36.8)
     temperature = round(a, 1)
+    # 时间判断
+    now = time.localtime().tm_hour +8
+    if (now >= 0) & (now < 3):
+        templateid = "clockSign1"
+        customerAppTypeRuleId = 137
+    elif (now >= 3) & (now < 9):
+        templateid = "clockSign2"
+        customerAppTypeRuleId = 138
+    elif (now >= 9) & (now< 16):
+        templateid = "clockSign3"
+        customerAppTypeRuleId = 139
+    elif (now >= 16) & (now < 24):
+        templateid = "clockSign1"
+        customerAppTypeRuleId = 137
     return  {
         "businessType": "epmpics",
         "method": "submitUpInfoSchool",
