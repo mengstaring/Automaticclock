@@ -73,18 +73,16 @@ def getUserJson(userInfo,token):
     temperature = round(a, 1)
     # 时间判断
     now = time.localtime().tm_hour +8
-    if (now >= 0) & (now < 3):
+    if (now >= 0) & (now < 11):
         templateid = "clockSign1"
         customerAppTypeRuleId = 137
-    elif (now >= 3) & (now < 9):
+    elif (now >= 11) & (now < 17):
         templateid = "clockSign2"
         customerAppTypeRuleId = 138
-    elif (now >= 9) & (now< 16):
+    elif (now >= 17) & (now< 24):
         templateid = "clockSign3"
         customerAppTypeRuleId = 139
-    elif (now >= 16) & (now < 24):
-        templateid = "clockSign1"
-        customerAppTypeRuleId = 137
+        
     return  {
         "businessType": "epmpics",
         "method": "submitUpInfoSchool",
